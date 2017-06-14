@@ -1,0 +1,6 @@
+[!] a warning line
+[ ] generic info line
+[!] warning line
+ | with more info
+ | on next lines
+[ ] another generic info
