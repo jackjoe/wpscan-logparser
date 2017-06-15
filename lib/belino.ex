@@ -6,10 +6,10 @@ defmodule Belino do
   @spec parse(binary) :: list
   def parse(str) do
     {:ok, tokens, _} = str |> to_charlist() |> :wpscan_lexer.string()
-    # IO.inspect(tokens)
+    IO.inspect(tokens)
     {:ok, list} = :wpscan_parser.parse(tokens)
     IO.inspect(list)
     # Enum.each(list, fn item -> IO.puts("[#{item.type}] #{item.text}") end)
-    list
+    # list
   end
 end
