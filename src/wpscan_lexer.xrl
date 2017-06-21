@@ -1,25 +1,23 @@
 Definitions.
 
-C       = [^\t\s\n\']
+C       = [^\t\n\']
 WS      = [\s\t]
 NL      = [\n\r]
-TW      = \[!\]\s
-TR      = \[\s\]\s
-LT      = TW|TR
 
 Rules.
 
 % type tokens
-{TW}                : {token, {type_warning,  TokenLine}}.
-{TR}                : {token, {type_regular,  TokenLine}}.
+\[!\]\s             : {token, {type_warning,  TokenLine}}.
+\[\s\]\s            : {token, {type_regular,  TokenLine}}.
 
 % props
-{LT}\sURL\:\s             : {token, {site, TokenLine}}.
-{LT}\sStarted\:\s         : {token, {started, TokenLine}}.
-{LT}\sFinished\:\s        : {token, {finished, TokenLine}}.
-{LT}\sRequests\sDone\:\s  : {token, {reqs_done, TokenLine}}.
-{LT}\sMemory\sused\:\s    : {token, {mem_used, TokenLine}}.
-{LT}\sElapsed\stime\:\s   : {token, {elapsed_time, TokenLine}}.
+URL\:\s             : {token, {site, TokenLine}}.
+Started\:\s         : {token, {started, TokenLine}}.
+Finished\:\s        : {token, {finished, TokenLine}}.
+Requests\sDone\:\s  : {token, {reqs_done, TokenLine}}.
+Memory\sused\:\s    : {token, {mem_used, TokenLine}}.
+Elapsed\stime\:\s   : {token, {elapsed_time, TokenLine}}.
+Style\sURL\:\s      : {token, {css, TokenLine}}.
 
 % string
 {C}                 : {token, {char, TokenLine, TokenChars}}.
@@ -34,7 +32,7 @@ https?://[a-zA-Z\./\?=0-9a-zA-Z\.a-zA-Z]+
 
 % skip
 {NL}                : skip_token.
-{WS}                : skip_token.
+%{WS}                : skip_token.
 \'                  : skip_token.
 
 Erlang code.
