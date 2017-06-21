@@ -1,0 +1,65 @@
+[ ] URL: http://www.overdering.be/
+[ ] Started: Mon May 29 11:00:11 2017
+
+[ ] robots.txt available under: 'http://www.overdering.be/robots.txt'
+[ ] Interesting entry from robots.txt: http://www.overdering.be/calendar/action~posterboard/
+[ ] Interesting entry from robots.txt: http://www.overdering.be/calendar/action~agenda/
+[ ] Interesting entry from robots.txt: http://www.overdering.be/calendar/action~oneday/
+[ ] Interesting entry from robots.txt: http://www.overdering.be/calendar/action~month/
+[ ] Interesting entry from robots.txt: http://www.overdering.be/calendar/action~week/
+[ ] Interesting entry from robots.txt: http://www.overdering.be/calendar/action~stream/
+[ ] Interesting entry from robots.txt: http://www.overdering.be/calendar/action~undefined/
+[ ] Interesting entry from robots.txt: http://www.overdering.be/calendar/action~http:/
+[ ] Interesting entry from robots.txt: http://www.overdering.be/calendar/action~default/
+[ ] Interesting entry from robots.txt: http://www.overdering.be/*controller=ai1ec_exporter_controller*
+[!] The WordPress 'http://www.overdering.be/readme.html' file exists exposing a version number
+[ ] Interesting header: LINK: <http://www.overdering.be/wp-json/>; rel="https://api.w.org/", <http://www.overdering.be/>; rel=shortlink
+[ ] Interesting header: SERVER: Apache
+[ ] XML-RPC Interface available under: http://www.overdering.be/xmlrpc.php
+
+[ ] WordPress version 4.4.10 identified from meta generator, readme, links opml
+ | Released:
+ | Changelog:
+
+[ ] WordPress theme in use: intendantschap
+
+[ ] Name: intendantschap
+ |  Location: http://www.overdering.be/wp-content/themes/intendantschap/
+ |  Style URL: http://www.overdering.be/wp-content/themes/intendantschap/style.css
+ |  Referenced style.css: http://www.overdering.be/wp-content/themes/intendantschap/assets/css/style.css
+ |  Theme Name: Intendantschap
+ |  Author: Common Ground
+
+[ ] Enumerating plugins from passive detection ...
+ | 2 plugins found:
+
+[ ] Name: jj-interactive-map - v0.0.1
+ |  Location: http://www.overdering.be/wp-content/plugins/jj-interactive-map/
+ |  Readme: http://www.overdering.be/wp-content/plugins/jj-interactive-map/readme.txt
+
+[ ] Name: wordpress-seo - v3.1.2
+ |  Last updated: 2017-04-11T09:39:00.000Z
+ |  Location: http://www.overdering.be/wp-content/plugins/wordpress-seo/
+ |  Readme: http://www.overdering.be/wp-content/plugins/wordpress-seo/readme.txt
+ |  Changelog: http://www.overdering.be/wp-content/plugins/wordpress-seo/changelog.txt
+[!] The version is out of date, the latest version is 4.6
+
+[!] Title: Yoast SEO <= 3.2.4 - Subscriber Settings Sensitive Data Exposure
+    Reference: https://wpvulndb.com/vulnerabilities/8487
+    Reference: https://www.wordfence.com/blog/2016/05/yoast-seo-vulnerability/
+[i] Fixed in: 3.2.5
+
+[!] Title: Yoast SEO <= 3.2.5 - Unspecified Cross-Site Scripting (XSS)
+    Reference: https://wpvulndb.com/vulnerabilities/8569
+    Reference: https://wordpress.org/plugins/wordpress-seo/changelog/
+[i] Fixed in: 3.3.0
+
+[!] Title: Yoast SEO <= 3.4.0 - Authenticated Stored Cross-Site Scripting (XSS)
+    Reference: https://wpvulndb.com/vulnerabilities/8583
+    Reference: https://plugins.trac.wordpress.org/changeset/1466243/wordpress-seo
+[i] Fixed in: 3.4.1
+
+[ ] Finished: Mon May 29 11:00:25 2017
+[ ] Requests Done: 60
+[ ] Memory used: 86.535 MB
+[ ] Elapsed time: 00:00:14

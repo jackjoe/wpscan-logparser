@@ -1,32 +1,40 @@
 Definitions.
 
-C          = [a-za-z0-9\.\,\[\]]
-W          = [^\t\s\.#"=]+
-S         = [\s\t]
+C       = [^\t\s\n\']
+WS      = [\s\t]
 NL      = [\n\r]
+TW      = \[!\]\s
+TR      = \[\s\]\s
+LT      = TW|TR
 
 Rules.
 
 % type tokens
-\[!\]         : {token, {type_regular,  TokenLine}}.
-\[\s\]        : {token, {type_warning,  TokenLine}}.
+{TW}                : {token, {type_warning,  TokenLine}}.
+{TR}                : {token, {type_regular,  TokenLine}}.
 
 % props
-URL\:         : {token, {url, TokenLine}}.
-
+{LT}\sURL\:\s             : {token, {site, TokenLine}}.
+{LT}\sStarted\:\s         : {token, {started, TokenLine}}.
+{LT}\sFinished\:\s        : {token, {finished, TokenLine}}.
+{LT}\sRequests\sDone\:\s  : {token, {reqs_done, TokenLine}}.
+{LT}\sMemory\sused\:\s    : {token, {mem_used, TokenLine}}.
+{LT}\sElapsed\stime\:\s   : {token, {elapsed_time, TokenLine}}.
 
 % string
-{W}          : {token, {word, TokenLine, parse_string(TokenChars)}}.
-%{C}          : {token, {char, TokenLine, TokenChars}}.
+{C}                 : {token, {char, TokenLine, TokenChars}}.
+
+% url
+https?://[a-zA-Z\./\?=0-9a-zA-Z\.a-zA-Z]+
+                    : {token, {url, TokenLine, TokenChars}}.
+%#=%_-,~&
 
 % the rest
-\|            : {token, {pipe, TokenLine}}.
+\|                  : {token, {pipe, TokenLine}}.
 
 % skip
-{NL}      : skip_token.
-{S}           : skip_token.
+{NL}                : skip_token.
+{WS}                : skip_token.
+\'                  : skip_token.
 
 Erlang code.
-
-parse_string(Str) ->
-  unicode:characters_to_binary(Str).
