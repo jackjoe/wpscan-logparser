@@ -12,7 +12,7 @@
 -export([format_error/1]).
 
 %% User code. This is placed here to allow extra attributes.
--file("src/wpscan_lexer.xrl", 38).
+-file("src/wpscan_lexer.xrl", 37).
 
 -file("/usr/local/Cellar/erlang/19.3/lib/erlang/lib/parsetools-2.1.4/include/leexinc.hrl", 14).
 
@@ -480,6 +480,8 @@ yystate(60, [32|Ics], Line, Tlen, Action, Alen) ->
     yystate(64, Ics, Line, Tlen+1, Action, Alen);
 yystate(60, Ics, Line, Tlen, Action, Alen) ->
     {Action,Alen,Tlen,Ics,Line,60};
+yystate(59, [126|Ics], Line, Tlen, Action, Alen) ->
+    yystate(55, Ics, Line, Tlen+1, Action, Alen);
 yystate(59, [63|Ics], Line, Tlen, Action, Alen) ->
     yystate(55, Ics, Line, Tlen+1, Action, Alen);
 yystate(59, [61|Ics], Line, Tlen, Action, Alen) ->
@@ -504,6 +506,8 @@ yystate(56, [58|Ics], Line, Tlen, Action, Alen) ->
     yystate(60, Ics, Line, Tlen+1, Action, Alen);
 yystate(56, Ics, Line, Tlen, Action, Alen) ->
     {Action,Alen,Tlen,Ics,Line,56};
+yystate(55, [126|Ics], Line, Tlen, _, _) ->
+    yystate(55, Ics, Line, Tlen+1, 10, Tlen);
 yystate(55, [63|Ics], Line, Tlen, _, _) ->
     yystate(55, Ics, Line, Tlen+1, 10, Tlen);
 yystate(55, [61|Ics], Line, Tlen, _, _) ->
@@ -833,7 +837,7 @@ yyaction_12() ->
      skip_token .
 
 -compile({inline,yyaction_13/0}).
--file("src/wpscan_lexer.xrl", 34).
+-file("src/wpscan_lexer.xrl", 33).
 yyaction_13() ->
      skip_token .
 

@@ -23,7 +23,7 @@ Style\sURL\:\s      : {token, {css, TokenLine}}.
 {C}                 : {token, {char, TokenLine, TokenChars}}.
 
 % url
-https?://[a-zA-Z\./\?=0-9a-zA-Z\.a-zA-Z]+
+https?://[a-zA-Z\./\?=0-9a-zA-Z\.a-zA-Z~]+
                     : {token, {url, TokenLine, TokenChars}}.
 %#=%_-,~&
 
@@ -32,7 +32,6 @@ https?://[a-zA-Z\./\?=0-9a-zA-Z\.a-zA-Z]+
 
 % skip
 {NL}                : skip_token.
-%{WS}                : skip_token.
 \'                  : skip_token.
 
 Erlang code.
