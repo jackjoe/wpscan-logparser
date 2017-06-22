@@ -3,6 +3,8 @@ Definitions.
 C       = [^\t\n\']
 WS      = [\s\t]
 NL      = [\n\r]
+Int     = [0-9]+
+
 
 Rules.
 
@@ -19,7 +21,17 @@ Memory\sused\:\s    : {token, {mem_used, TokenLine}}.
 Elapsed\stime\:\s   : {token, {elapsed_time, TokenLine}}.
 Style\sURL\:\s      : {token, {css, TokenLine}}.
 
+% dates
+Mon|Tue|Wed|Thu|Fri|Sat|Sun
+                    : {token, {day, TokenLine, TokenChars}}.
+Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec
+                    : {token, {month, TokenLine, TokenChars}}.
+
+% int
+{Int}               : {token, {int, TokenLine, TokenChars}}.
+
 % string
+\s                 : {token, {space, TokenLine, TokenChars}}.
 {C}                 : {token, {char, TokenLine, TokenChars}}.
 
 % url
